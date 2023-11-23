@@ -43,3 +43,13 @@ ClapTrap::~ClapTrap()
 {
 	std::cout << "deconstructor called" << std::endl;
 }
+
+void	ClapTrap::attack(const std::string& target)
+{
+	if (this->_ep < 0)
+		std::cout << this->_name << "doesn't have enough energy points" << std::endl;
+	else if (this->_hp == 0)
+		std::cout << this->_name << "doesn't have hit point left" << std::endl;
+	else
+		std::cout << this->_name << " attacks " << target << ", causing " << this->_atk << " points of damage!" << std::endl;
+}
