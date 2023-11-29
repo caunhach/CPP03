@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap(): ClapTrap("Player", 100, 50, 20, "ScavTrap", 100)
@@ -69,12 +68,5 @@ void	ScavTrap::guardGate(void)
 		std::cout << YELLOW << "Scavtrap" << " : " << this->_name << " can not guard gate, but he is dead" << RESET << std::endl;
 		return ;
 	}
-	if (this->_ep == 0)
-	{
-		std::cout << YELLOW << "Scavtrap" << " : " << this->_name << " tries to guard gate, but does not have enough energy points" << RESET << std::endl;
-		return ;
-	}
-	this->_ep--;
 	std::cout << YELLOW << "ScavTrap : " << this->_name << " is now in Gate keeper mode" << RESET << std::endl;
-	std::cout << YELLOW << "Claptrap" << " : " << this->_name << " now has " << this->_hp << " and " << this->_ep << " remain" << RESET << std::endl;
 }

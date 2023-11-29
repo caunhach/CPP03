@@ -102,18 +102,23 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		std::cout << BLUE << this->_classname << " : " << this->_name << " can not be repaired because he is already dead" << RESET << std::endl;
 		return;
 	}
-	std::cout << BLUE << this->_classname << " : " << this->_name << " was repaired for amount of " << amount << " hp" << RESET << std::endl;
-	std::cout << BLUE << this->_classname << " : " << this->_name << "'s hp changed from " << this->_hp << " to ";
-	if (this->_hp + amount < this->_classhp)
-	{
-		this->_hp += amount;
-		std::cout << this->_hp << RESET << std::endl;
-	}
+	if (this->_hp == this->_classhp)
+		std::cout << BLUE << this->_classname << " : " << this->_name << " can not be repaired because his hp is full " << RESET << std::endl;
 	else
 	{
-		this->_hp = this->_classhp;
-		std::cout << this->_hp << std::endl;
-		std::cout << this->_classname << " : " << this->_name << " now has full hp" << RESET << std::endl;
+		std::cout << BLUE << this->_classname << " : " << this->_name << " was repaired for amount of " << amount << " hp" << RESET << std::endl;
+		std::cout << BLUE << this->_classname << " : " << this->_name << "'s hp changed from " << this->_hp << " to ";
+		if (this->_hp + amount < this->_classhp)
+		{
+			this->_hp += amount;
+			std::cout << this->_hp << RESET << std::endl;
+		}
+		else
+		{
+			this->_hp = this->_classhp;
+			std::cout << this->_hp << std::endl;
+			std::cout << this->_classname << " : " << this->_name << " now has full hp" << RESET << std::endl;
+		}
 	}
 }
 

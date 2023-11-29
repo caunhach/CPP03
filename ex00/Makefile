@@ -12,7 +12,7 @@
 
 SRCS = main.cpp ClapTrap.cpp
 OBJS = $(SRCS:.cpp=.o)
-HDRS = ClapTrap.hpp
+HDRS = Claptrap.hpp
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 

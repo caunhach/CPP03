@@ -10,4 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SCAV_TRAP_HPP
+# define SCAV_TRAP_HPP
 
+#include "ClapTrap.hpp"
+
+class	ScavTrap : public ClapTrap
+{
+	public:
+		ScavTrap();
+		ScavTrap(const ScavTrap &src);
+		ScavTrap(std::string const &name, unsigned int hp, unsigned int ep, unsigned int atk, std::string classname, unsigned int classhp);
+		~ScavTrap();
+		ScavTrap &operator=(const ScavTrap &src);
+		void attack(const std::string &target);
+		void guardGate(void);
+};
+
+#endif
