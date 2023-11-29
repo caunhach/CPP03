@@ -18,10 +18,13 @@ int	main()
 	ClapTrap b = a;
 	ClapTrap c(a);
 	ClapTrap d("Bob", 10, 10, 0, "ClapTrap", 10);
+	ClapTrap e("Peter");
 	a.attack(d.get_name());
+	b.attack(e.get_name());
+	c.attack(b.get_name());
 	d.attack(c.get_name());
 	for (int i=0; i<11; i++)
-		c.attack(b.get_name());
+		e.attack(a.get_name());
 	a.takeDamage(1);
 	a.takeDamage(d.get_atk());
 	a.takeDamage(9);
@@ -32,6 +35,7 @@ int	main()
 	b.beRepaired(1);
 	c.takeDamage(5);
 	c.takeDamage(a.get_atk());
+	c.takeDamage(0);
 	c.beRepaired(1);
 	c.beRepaired(4);
 	c.beRepaired(1);
@@ -39,5 +43,9 @@ int	main()
 	d.takeDamage(a.get_atk());
 	d.beRepaired(c.get_classhp());
 	d.beRepaired(1);
+	e.takeDamage(5);
+	e.takeDamage(a.get_atk());
+	e.beRepaired(c.get_classhp());
+	e.beRepaired(1);
 	return (0);
 }

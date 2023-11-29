@@ -22,7 +22,7 @@ FragTrap::FragTrap(const FragTrap &src): ClapTrap(src)
 	std::cout << GREEN << "Copy FragTrap constructor called" << RESET << std::endl;
 }
 
-FragTrap::FragTrap(std::string const &name, unsigned int hp, unsigned int ep, unsigned int atk, std::string classname, unsigned int classhp): ClapTrap(name, 100, 100, 30, "FragTrap", 100)
+FragTrap::FragTrap(std::string const &name): ClapTrap(name, 100, 100, 30, "FragTrap", 100)
 {
 	std::cout << GREEN << "FragTrap Constructor of " << "\"" << name << "\"" << " called" << RESET << std::endl;
 }

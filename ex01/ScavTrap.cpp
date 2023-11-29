@@ -22,7 +22,7 @@ ScavTrap::ScavTrap(const ScavTrap &src): ClapTrap(src)
 	std::cout << GREEN << "Copy ScavTrap constructor called" << RESET << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string const &name, unsigned int hp, unsigned int ep, unsigned int atk, std::string classname, unsigned int classhp): ClapTrap(name, 100, 50, 20, "ScavTrap", 100)
+ScavTrap::ScavTrap(std::string const &name): ClapTrap(name, 100, 50, 20, "ScavTrap", 100)
 {
 	std::cout << GREEN << "ScavTrap Constructor of " << "\"" << name << "\"" << " called" << RESET << std::endl;
 }

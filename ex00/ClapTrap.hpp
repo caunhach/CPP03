@@ -35,6 +35,7 @@ class	ClapTrap
 	public:
 		ClapTrap();
 		ClapTrap(const ClapTrap &src);
+		ClapTrap(std::string const &name);
 		ClapTrap(std::string const &name, unsigned int hp, unsigned int ep, unsigned int atk, std::string classname, unsigned int classhp);
 		~ClapTrap();
 		ClapTrap &operator=(const ClapTrap &src);

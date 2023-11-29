@@ -31,6 +31,12 @@ ClapTrap::ClapTrap(const ClapTrap &src)
 	this->_classhp = src.get_classhp();
 }
 
+ClapTrap::ClapTrap(std::string const &name): _hp(10), _ep(10), _atk(0), _classname("ClapTrap"), _classhp(10)
+{
+	std::cout << GREEN << "ClapTrap Constructor of " << "\"" << name << "\"" << " called" << RESET << std::endl;
+	this->_name = name;
+}
+
 ClapTrap::ClapTrap(std::string const &name, unsigned int hp, unsigned int ep, unsigned int atk, std::string classname, unsigned int classhp)
 {
 	std::cout << GREEN << "ClapTrap Constructor of " << "\"" << name << "\"" << " called" << RESET << std::endl;
@@ -102,18 +108,23 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		std::cout << BLUE << this->_classname << " : " << this->_name << " can not be repaired because he is already dead" << RESET << std::endl;
 		return;
 	}
-	std::cout << BLUE << this->_classname << " : " << this->_name << " was repaired for amount of " << amount << " hp" << RESET << std::endl;
-	std::cout << BLUE << this->_classname << " : " << this->_name << "'s hp changed from " << this->_hp << " to ";
-	if (this->_hp + amount < this->_classhp)
-	{
-		this->_hp += amount;
-		std::cout << this->_hp << RESET << std::endl;
-	}
+	if (this->_hp == this->_classhp)
+		std::cout << BLUE << this->_classname << " : " << this->_name << " can not be repaired because his hp is full " << RESET << std::endl;
 	else
 	{
-		this->_hp = this->_classhp;
-		std::cout << this->_hp << std::endl;
-		std::cout << this->_classname << " : " << this->_name << " now has full hp" << RESET << std::endl;
+		std::cout << BLUE << this->_classname << " : " << this->_name << " was repaired for amount of " << amount << " hp" << RESET << std::endl;
+		std::cout << BLUE << this->_classname << " : " << this->_name << "'s hp changed from " << this->_hp << " to ";
+		if (this->_hp + amount < this->_classhp)
+		{
+			this->_hp += amount;
+			std::cout << this->_hp << RESET << std::endl;
+		}
+		else
+		{
+			this->_hp = this->_classhp;
+			std::cout << this->_hp << std::endl;
+			std::cout << this->_classname << " : " << this->_name << " now has full hp" << RESET << std::endl;
+		}
 	}
 }
 

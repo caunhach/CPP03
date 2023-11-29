@@ -20,7 +20,7 @@ class	ScavTrap : public ClapTrap
 	public:
 		ScavTrap();
 		ScavTrap(const ScavTrap &src);
-		ScavTrap(std::string const &name, unsigned int hp, unsigned int ep, unsigned int atk, std::string classname, unsigned int classhp);
+		ScavTrap(std::string const &name);
 		~ScavTrap();
 		ScavTrap &operator=(const ScavTrap &src);
 		void attack(const std::string &target);

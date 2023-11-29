@@ -20,7 +20,7 @@ class	FragTrap : public ClapTrap
 	public:
 		FragTrap();
 		FragTrap(const FragTrap &src);
-		FragTrap(std::string const &name, unsigned int hp, unsigned int ep, unsigned int atk, std::string classname, unsigned int classhp);
+		FragTrap(std::string const &name);
 		~FragTrap();
 		FragTrap	&operator=(const FragTrap &src);
 		void		attack(const std::string &target);

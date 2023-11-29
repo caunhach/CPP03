@@ -22,7 +22,7 @@ ScavTrap::ScavTrap(const ScavTrap &src): ClapTrap(src)
 	std::cout << GREEN << "Copy ScavTrap constructor called" << RESET << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string const &name, unsigned int hp, unsigned int ep, unsigned int atk, std::string classname, unsigned int classhp): ClapTrap(name, 100, 50, 20, "ScavTrap", 100)
+ScavTrap::ScavTrap(std::string const &name): ClapTrap(name, 100, 50, 20, "ScavTrap", 100)
 {
 	std::cout << GREEN << "ScavTrap Constructor of " << "\"" << name << "\"" << " called" << RESET << std::endl;
 }
@@ -68,12 +68,5 @@ void	ScavTrap::guardGate(void)
 		std::cout << YELLOW << "Scavtrap" << " : " << this->_name << " can not guard gate, but he is dead" << RESET << std::endl;
 		return ;
 	}
-	if (this->_ep == 0)
-	{
-		std::cout << YELLOW << "Scavtrap" << " : " << this->_name << " tries to guard gate, but does not have enough energy points" << RESET << std::endl;
-		return ;
-	}
-	this->_ep--;
 	std::cout << YELLOW << "ScavTrap : " << this->_name << " is now in Gate keeper mode" << RESET << std::endl;
-	std::cout << YELLOW << "Claptrap" << " : " << this->_name << " now has " << this->_hp << " and " << this->_ep << " remain" << RESET << std::endl;
 }

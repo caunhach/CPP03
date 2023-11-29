@@ -31,6 +31,12 @@ ClapTrap::ClapTrap(const ClapTrap &src)
 	this->_classhp = src.get_classhp();
 }
 
+ClapTrap::ClapTrap(std::string const &name): _hp(10), _ep(10), _atk(0), _classname("ClapTrap"), _classhp(10)
+{
+	std::cout << GREEN << "ClapTrap Constructor of " << "\"" << name << "\"" << " called" << RESET << std::endl;
+	this->_name = name;
+}
+
 ClapTrap::ClapTrap(std::string const &name, unsigned int hp, unsigned int ep, unsigned int atk, std::string classname, unsigned int classhp)
 {
 	std::cout << GREEN << "ClapTrap Constructor of " << "\"" << name << "\"" << " called" << RESET << std::endl;
