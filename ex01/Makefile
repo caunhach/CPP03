@@ -10,4 +10,25 @@
 #                                                                              #
 # **************************************************************************** #
 
+SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp
+OBJS = $(SRCS:.cpp=.o)
+HDRS = ClapTrap.hpp ScavTrap.hpp
+CC = c++
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
+NAME = scavTrap
+
+all: $(NAME)
+
+$(NAME): $(OBJS) $(HDRS)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+
+clean:
+	rm -f $(OBJS)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re

@@ -1,13 +1,20 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: caunhach <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/23 22:01:17 by caunhach          #+#    #+#             */
-/*   Updated: 2023/11/23 22:01:19 by caunhach         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#include "ScavTrap.hpp"
 
-
+int	main()
+{
+	ScavTrap a;
+	ScavTrap b(a);
+	a.attack("Peter");
+	a.takeDamage(3);
+	ScavTrap c(a);
+	a.takeDamage(2);
+	b.takeDamage(1);
+	c.takeDamage(1);
+	b.takeDamage(9);
+	c.takeDamage(10);
+	c.takeDamage(1);
+	a.guardGate();
+	a.beRepaired(2);
+	a.beRepaired(7);
+	return (0);
+}
